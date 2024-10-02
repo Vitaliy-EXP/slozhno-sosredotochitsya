@@ -7,7 +7,8 @@
   --emphasize-color: #FF0070;
   --text-color-base: #f1b2ce;
   --header-title-color: #db00ff;
-  --font-family: "IBM Plex Mono", serif;
+  --opacity: #FF007066;
+  --font-family: "IBM Plex Mono", monospace, serif;
   --font-weight-bald: 700;
   --font-weight-normal: 400;
   --font-size-base: 18px;
