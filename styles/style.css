@@ -255,7 +255,7 @@
     inline-size: 315px;
   }
 
-  .second_section .content_section_list{
+  .second_section .content_section_list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
