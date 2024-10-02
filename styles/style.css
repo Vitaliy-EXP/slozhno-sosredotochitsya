@@ -1,5 +1,426 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color, rgb(0 0 40));
+  background-image: var(--background-image, url('../images/cover-image.png'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-color-base);
+  line-height: 23.4px;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  margin-block-end: 30px;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: 10px;
+}
+
+@media (width >= 768px) {
+  .header {
+    min-block-size: 1024px;
+    padding: 20px;
+    margin-block-end: 40px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+}
+
+.decorated-zone {
+  position: relative;
+  color: var(--accent-color);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.decorated-zone::before {
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
+  border-inline-end: 1px solid currentcolor;
+  border-block-start: 1px solid currentcolor;
+}
+
+@media (width >= 768px) {
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+}
+
+.decorated-zone::after {
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
+  border-inline-start: 1px solid currentcolor;
+  border-block-end: 1px solid currentcolor;
+}
+
+@media (width >= 768px) {
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+}
+
+.rec-label {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 70px;  
+}
+
+@media (width >= 768px) {
+  .rec-label {
+    inset-block-start: 20px; 
+    inset-inline-end: 80px;
+  }
+}
+
+.rec-label::before {
+  content: 'REC';
+  position: absolute;
+  color: var(--accent-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+}
+
+.rec-label::after {
+  content: '';
+  position: absolute;
+  background-image: url(../images/Ellipse.png);  
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  inline-size: 22px;
+  block-size: 22px;
+  inset-inline-start: 36px;
+}
+
+.header__title {
+  align-self: center;
+  font-family: var(--font-family);
+  font-size: var(--title-font-size-mobile);
+  font-weight: var(--font-weight-bald);
+  line-height: 97px;
+  text-align: left;
+  text-shadow: 4px 4px 0 var(--header-title-shadow);
+  color: var(--header-title-color);
+}
+
+@media (width >= 768px) {
+  .header__title {
+    font-size: var(--title-font-size-others);
+    margin-inline-start: -20px;
+    line-height: 130px;
+  }
+}
+
+.header__intro {
+  display: block;
+  align-self: center;
+  justify-self: right;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bald);
+  line-height: 23.4px;
+  text-align: left;
+  max-inline-size: 364px;
+}
+
+@media (width >= 768px) {
+  .header__intro {
+    max-inline-size: 50%;
+    margin-block-end: 15px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__intro {
+    margin-block-end: 0px;
+  }
+}
+
+.header__theme-menu {
+  place-self: center end;
+}
+
+@media (width >= 768px) {
+  .header__theme-menu {
+    margin-block-start: 15px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    place-self: start center;
+    margin-block-start: 0px;
+  }
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+.header__theme-menu-button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: var(--accent-color);
+  background-color: transparent;
+  border: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  text-transform: lowercase;
+  min-inline-size: 70px;
+  block-size: 26px;
+  line-height: 20px;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: transparent;
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.main {
+  display: grid;
+  row-gap: 50px;
+  max-inline-size: 100%;
+  padding: 10px;
+}
+
+@media (width >= 768px) {
+  .main {  
+    padding: 20px;
+    row-gap: 80px;
+  }
+}
+
+.content_section {
+  display: grid;
+  gap:20px;
+}
+
+@media (width >= 768px) {
+  .first_section {
+    grid-template-columns: 236px 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .first_section {
+    grid-template-columns: 315px 1fr;
+  }
+}
+  
+@media (width >= 768px) {
+  .second_section .content_section_title {
+    inline-size: 236px;
+  }
+}
+
+@media (width >= 1024px) {
+  .second_section .content_section_title {
+    inline-size: 315px;
+  }
+  .second_section .content_section_list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.third_section {
+  grid-template-rows: 1fr;
+}
+
+@media (width >= 768px) {
+  .third_section {
+    grid-template-columns: 236px 1fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .third_section {
+    grid-template-columns: 315px 1fr;
+  }
+}
+
+@media (width >= 768px) {
+  .third_section-wraper {
+  }
+}
+
+.content_section_title {
+  color: var(--accent-color);
+  font-weight: var(--font-weight-bald);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  line-height: 23.4px;
+  text-align: left;
+  text-wrap: wrap;
+}
+
+.third_section-wraper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content_section_list {
+  display: grid;
+  gap: 20px;
+}
+
+.content_section_list_link {
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-shadow);
+}  
+
+.content_section_list_link:hover {
+  border-block-end: 2px solid currentColor;
+}  
+
+.content_section_list_link:focus-visible {
+  outline: 2px solid currentColor;
+  line-height: 20px;
+} 
+
+.article_title {
+  margin-block-end: 10px;
+  background-color: var(--emphasize-color);
+  color: var(--header-text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 23.4px;
+  text-align: left;
+  text-wrap: wrap;
+}
+
+.galery {
+  display: grid;
+  gap: 10px;
+}
+
+@media (width >=768px) {
+  .galery {
+    gap: 20px
+  }
+} 
+
+.galery__set {
+  display: grid;
+  gap: 10px;
+  inline-size: 100%;
+}
+
+@media (width >=768px) {
+  .galery__set {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  } 
+}
+
+.galery__set img {
+  width: 100%;
+}
+
+@media (width >=768px) {
+  .galery__set-item-1 {
+    grid-column: 1/3;
+  }
+
+  .galery__set-item-2 {
+    grid-row: 1/3;
+    grid-column: 3/4;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .galery__set-item-3 {
+    grid-row: 2/4;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .galery__set-item-5 {
+    grid-column: 2/4;
+  }
+}
+
+.footer {
+  display: grid;
+  place-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-start: 30px;
+}
+
+@media (width >=768px) {
+  .footer {
+    min-block-size: 1024px;
+    margin-block-start: 40px;
+  }
+}
+
+@media (width >=1024px) {
+  .footer {
+    min-block-size: 768px;
+  }
+}
+
+.footer__content {
+  font-size: var(--title-font-size-mobile);
+  font-weight: var(--font-weight-bald);
+  color: var(--header-title-color);
+  line-height: 130px;
+  text-shadow: 2px 2px 0 var(--header-title-shadow);
+}
+
+@media (width >= 768px) {
+  .footer__content {
+    font-size: var(--title-font-size-others);
+  }
+}
+
+.title-decor {
+  background-color: var(--emphasize-color);
+  color: var(--header-text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bald);
+  line-height: 23.4px;
+  text-align: left;
+  text-wrap: wrap;
 }
