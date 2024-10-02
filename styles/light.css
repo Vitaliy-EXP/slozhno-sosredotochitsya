@@ -21,8 +21,8 @@
   display: none;
 }
 
-@media (prefers-color-scheme: :root) {
-  .page.theme_auto {
+@media (prefers-color-scheme: light) {
+  :root {
     --bg-color: #FFF1F7;
     --accent-color: #353430;
     --text-color-base: #353430;
