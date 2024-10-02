@@ -79,12 +79,12 @@
 .rec-label {
   position: absolute;
   inset-block-start: 10px;
-  inset-inline-end: 70px;  
+  inset-inline-end: 70px;
 }
 
 @media (width >= 768px) {
   .rec-label {
-    inset-block-start: 20px; 
+    inset-block-start: 20px;
     inset-inline-end: 80px;
   }
 }
@@ -101,8 +101,8 @@
 .rec-label::after {
   content: '';
   position: absolute;
-  background-image: url(../images/Ellipse.png);  
-  background-size: cover; 
+  background-image: url(../images/Ellipse.png);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   inline-size: 22px;
@@ -221,7 +221,7 @@
 }
 
 @media (width >= 768px) {
-  .main {  
+  .main {
     padding: 20px;
     row-gap: 80px;
   }
@@ -254,6 +254,7 @@
   .second_section .content_section_title {
     inline-size: 315px;
   }
+
   .second_section .content_section_list{
     grid-template-columns: repeat(3, 1fr);
   }
@@ -272,11 +273,6 @@
 @media (width >= 1024px) {
   .third_section {
     grid-template-columns: 315px 1fr;
-  }
-}
-
-@media (width >= 768px) {
-  .third_section-wraper {
   }
 }
 
@@ -345,11 +341,11 @@
   inline-size: 100%;
 }
 
-@media (width >=768px) {
+@media (width >= 768px) {
   .galery__set {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  } 
+  }
 }
 
 .galery__set img {
