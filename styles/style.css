@@ -90,8 +90,9 @@
 }
 
 .rec-label::before {
-  content: 'REC';
+  content: 'rec';
   position: absolute;
+  text-transform: uppercase;
   inset-block-start: 0px;
   inset-inline-start: 0px;
   color: var(--accent-color);
@@ -309,11 +310,11 @@
 }  
 
 .content_section_list_link:hover {
-  border-block-end: 2px solid currentColor;
+  border-block-end: 1px solid currentColor;
 }  
 
 .content_section_list_link:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 1px solid currentColor;
   line-height: 20px;
 }
 
@@ -324,7 +325,6 @@
 }
 
 .article_title {
-  /* margin-block-end: 10px; */
   background-color: var(--emphasize-color);
   color: var(--header-text-color);
   font-family: var(--font-family);
